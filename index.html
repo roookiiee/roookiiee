@@ -1,0 +1,1264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="https://www.meizu.com/static/global/images/favicon-90c2e618ff.ico">
+    <title>魅族官网 - 魅族 18X 手机：为热爱，敢直白</title>
+    <link rel="stylesheet" href="index.css">
+    <style>
+        *{
+    margin: 0;
+    padding: 0;
+}
+.header{
+    width:100%;
+    line-height: 40px;
+    font-size: 16px;
+    text-align: center;
+    position: relative;
+}
+.header ul{
+    display: inline-block;
+}
+
+.logo{
+    margin: 15px 80px 0 -50px;
+    font-size: 30px;
+}
+
+.logo a{
+    color:rgb(0,140,255);
+}
+
+.header li{
+    float: left;
+    margin-top: 20px;
+    list-style: none;
+}
+
+.header li+li{
+    margin-left: 20px;
+}
+
+.search{ 
+    width: 230px;
+    height: 40px;
+    float: left;
+    margin-top:4px ; 
+}
+
+.search>input{
+    float: left;
+    width: 180px;
+    height: 36px;
+    border: 1px solid #e0e0e0;
+    border-right: none;
+    padding: 0 10px;
+    box-sizing: border-box;
+    outline: none;
+    transition: all .2s;
+    border-radius: 15px 0px 0px 15px;
+}
+
+.search>a{
+    border-radius: 0 15px 15px 0;
+    float: left;
+    width: 50px;
+    height: 36px;
+    border: 1px solid #e0e0e0;
+    box-sizing: border-box;
+    font-size: 24px;
+    color: #616161;
+    line-height: 30px;
+}
+
+.search>input:hover,.search>input:hover+a{
+    border-color: #b0b0b0;
+}
+
+a{
+    text-decoration: none;
+    color: rgb(51, 51, 51);
+}
+
+li{
+    font: optional;
+    display: list-item;
+}
+
+.nav-bar-list{
+    display: none;
+}
+
+.header-menu li:hover>.nav-bar-list{
+    display: block;
+}
+
+.nav-bar-list li{
+    float: left;
+    width: 204px;
+    padding-top: 10px;
+}
+
+.header-menu>ul>li>a:hover{
+    color: rgb(0, 140, 255);
+}
+
+.nav-bar-list{
+    z-index: 1;
+    position: absolute;
+    left: 0;
+    float: left;
+    width: 100%;
+    height: 229px;
+    background-color: #fff;
+}
+.name,.price{
+    font-size: 12px;
+    line-height: 20px;
+}
+
+.img-box{
+    width: 100%;
+    height: 110px;
+    border-right: 1px solid #e0e0e0;
+    box-sizing: border-box;
+    margin-bottom: 16px;
+}
+
+.nav-bar-list li:last-child .img-box{
+    border-right: none;
+}
+
+.icon{
+    margin-top: 15px;
+    height: 20px;
+    width: 20px;
+}
+
+/* 轮播图 */
+.turnPhoto{
+    overflow: hidden;
+    position: relative;
+    width: 1903px;
+    height: 512px;
+    /* margin: 0 auto; */
+}
+.turnPhoto .img-list{
+    display: flex;
+    position: relative;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    transition: 0.5s ease;
+}
+
+.turnPhoto .img-list img{
+    width: 100%;
+    cursor: pointer;
+}
+
+.turnPhoto a{
+    position: absolute;
+    top: 50%;
+    transform: translate(0,-50%);
+    display: block;
+    width: 40px;
+    /* border-color: rgba(0,0,0,0.7); */
+    color: white;
+    font-size: 25px;
+    text-align: center;
+    text-decoration: none;
+}
+
+.turnPhoto a.left{
+    left:2px;
+}
+
+.turnPhoto a.right{
+    right:2px;
+}
+
+.circle-list{
+    display: flex;  
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translate(-50%,0); 
+    width: 240px;
+    height: 40px;
+    z-index: 1;
+}
+
+.circle-list> .circle{
+    margin:0 5px;
+    width: 15px;
+    height: 15px;
+    background-color: #ecf0f1;
+    border-radius: 50%;
+    margin-top: 25px;
+
+}
+
+.circle-list > .circle.active{
+    background-color: rgb(87, 77, 77);
+}
+
+ul{
+    display: block;
+    list-style-type: disc;
+    list-style:none;
+}
+
+div{
+    display: block;
+}
+
+/* 整体背景 */
+.container{
+    background-color:rgb(244, 244, 244);
+    min-width: 1240px;
+    overflow: hidden;
+}
+
+.adv-center{
+    margin-bottom: 50px;
+}
+
+.adv-center .section-box-adv{
+    height: auto;
+    padding-bottom: 45px;
+}
+
+.adv-center .section-box-adv{
+    background-color: #fff;
+    border-bottom: 1px solid #eee;
+    overflow: hidden;
+}
+
+.adv-center .section-box-adv .four-ad{
+    max-width: 1240px;
+    margin: 0 auto;
+}
+
+.section-box-adv ul{
+    overflow: hidden;
+}
+
+.section-box-adv li{
+    float: left;
+    width: 25%;
+    padding-top: 45px;
+}
+
+.section-box box-img{
+    display: block;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    background-repeat: no-repeat;
+    background-position: 50%;
+}
+
+.section-box-adv img{
+    height: 130px;
+}
+
+.section-box a{
+    display: block;
+    background-position:50%;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+    transition: all .3s ease;
+}
+
+.section-box-adv a:hover{
+    opacity: .85;
+}
+
+.section-box-adv em{
+    display: block;
+    color: #333;
+    font-size: 20px;
+    font-weight: 400;
+    font-style: normal;
+}
+.section-box-adv p{
+    font-size: 14px;
+    color: #999;
+}
+
+.section-title{
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+h3{
+    font-size: 1em;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.section-box-adv{
+    height: 450px;
+    background-color: #fff;
+    border-bottom: 1px solid #eee;
+    overflow: hidden;
+}
+.section-box-adv .box-adv-ad img{
+    position: absolute;
+    width: auto;
+    height: auto;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.wrapper{
+    width: 1240px;
+    margin: auto;
+}
+
+.section-phone-box .section-box-row li.big{
+    width: 595px;
+    height: 610px;
+}
+
+.section-phone-box .section-box-row li{
+    float: left;
+    position: relative;
+    width: 293px;
+    height: 375px;
+    margin-right: 9px;
+    margin-top: 10px;
+    background-color: #fff;
+    overflow: hidden;
+    transition: all .3s ease;
+}
+
+.section-phone-box .section-box-row li:hover {
+    box-shadow: 0 15px 30px rgb(0 0 0 / 10%);
+}
+
+.section-phone-box .section-box-row li .section-item-box {
+    height: 100%;
+}
+
+.section-phone-box .section-box-row li.big .box-img{
+    background-size: cover;
+}
+
+.section-box .box-img{
+    display: block;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    background-repeat: no-repeat;
+    background-position: 50%;
+}
+
+.section-box a{
+    position: relative;
+    display: block;
+    height: 100%;
+    background-position:  50%;
+    background-repeat: no-repeat;
+}
+
+.big .goods-box .goods-img {
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    height: 460px;
+    margin-left: -250px;
+}
+
+.goods-box .goods-img {
+    height: 230px;
+    margin-top: 30px;
+}
+
+img{
+    border:0;
+}
+
+.section-phone-box .section-box-row li.big .box-info {
+    top: 58px;
+}
+
+.goods-box .box-info{
+    position: absolute;
+    top: 270px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+}
+
+.section-phone-box .section-box-row li.big .goods-name {
+    color: #333;
+    font-size: 28px;
+    margin-bottom: 0;
+}
+
+.goods-box .box-info .goods-name {
+    color: #333;
+    font-size: 16px;
+    margin-bottom: 2px;
+}
+
+.goods-box .box-info span {
+    display: block;
+}
+
+.section-phone-box .section-box-row li.big .goods-desc {
+    color: #333;
+    font-size: 18px;
+    margin-bottom: 3px;
+}
+
+.goods-box .box-info .goods-desc {
+    color: #999;
+    font-size: 14px;
+}
+
+.goods-box .box-info .goods-price {
+    position: relative;
+    display: inline-block;
+    color: #c00;
+    font-size: 22px;
+    padding-left: 14px;
+}
+
+.goods-box .box-info .goods-price i {
+    position: absolute;
+    left: 0;
+    font-size: 14px;
+    bottom: 3px;
+}
+
+.goods-box .product-sign.red {
+    background-color: #ff3149;
+    background-image: linear-gradient(120deg,#ff3149,#ff64a6);
+}
+
+.goods-box .product-sign {
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    display: block;
+    width: 60px;
+    height: 60px;
+    line-height: 60px;
+    color: #fff;
+    font-size: 16px;
+    text-align: center;
+    border-radius: 50%;
+}
+
+.section-phone-box .section-box-row li.big2, .section-phone-box .section-box-row .phone6{
+    margin-right: 0;
+}
+
+
+/* 底部栏 */
+#meizu-footer {
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+    color: #515151;
+    position: relative;
+    background-color: #fff;
+}
+
+#meizu-footer .meizu-footer-link {
+    padding: 48px 0 20px ;
+    border-top: 44px solid rgb(244, 244, 244);
+    border-bottom: 44px solid #fff;
+}
+
+#meizu-footer .meizu-footer-wrap {
+    max-width: 1240px;
+    margin: 0 auto;
+}
+
+#meizu-footer .meizu-row {
+    max-width: 1240px;
+}
+
+#meizu-footer .footer-hr{
+    margin: 10px 0 10px;
+    display: block;
+    height: 1px;
+    width: 1240px;
+    border: 0;
+    border-top: 1px solid #eee;
+    padding: 0;
+}
+
+#meizu-footer .meizu-footer-service {
+    width: 1000px;
+    float: left;
+}
+
+#meizu-footer .meizu-footer-service li{
+    float: left;
+    text-align: center;
+    width: 15%;
+}
+
+#meizu-footer .meizu-footer-service li a {
+    display: block;
+    overflow: hidden;
+}
+
+#meizu-footer .meizu-footer-link a {
+    line-height: 27px;
+    font-size: 12px;
+    color: #666;
+}
+
+#meizu-footer a {
+    color: #515151;
+    text-decoration: none;
+}
+
+#meizu-footer .meizu-footer-service li img {
+    width: 50px;
+    display: block;
+    margin: 0 auto;
+}
+
+#meizu-footer .meizu-footer-service li span {
+    line-height: 30px;
+    color: #999;
+}
+
+#meizu-footer .onlive-server {
+    float: right;
+    text-align: right;
+    margin-top: -18px;
+}
+
+#meizu-footer .onlive-server span {
+    color: #999;
+    font-size: 12px;
+    line-height: 30px;
+}
+
+#meizu-footer .onlive-server .tel {
+    color: #008cff;
+    font-size: 25px;
+    font-weight: 400;
+    margin-top: -6px;
+    line-height: 40px;
+}
+
+#meizu-footer .onlive-server .onlive-btn {
+    height: 30px;
+    padding: 0 16px;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+    line-height: 30px;
+    color: #fff;
+    border-radius: 20px;
+    margin-top: 3px;
+    display: inline-block;
+    font-size: 14px;
+    background: #008cff;
+}
+
+#meizu-footer .meizu-row {
+    max-width: 1240px;
+    position: relative;
+}
+
+#meizu-footer .meizu-footer-info {
+    color: #999;
+    text-align: left;
+    font-size: 12px;
+    width: 100%;
+    float: left;
+}
+#meizu-footer .meizu-footer-info ul{
+    margin-left: 40px;
+}
+
+#meizu-footer .meizu-footer-info ul li {
+    padding-right: 15px;
+    border-right: 1px solid #d6d6d6;
+    float: left;
+    height: 18px;
+    margin-right: 15px;
+}
+
+#meizu-footer .meizu-footer-info ul a {
+    display: block;
+    line-height: 18px;
+}
+
+#meizu-footer .meizu-footer-info a{
+    color: #999;
+}
+
+#meizu-footer a {
+    color: #515151;
+    text-decoration: none;
+}
+
+#meizu-footer .meizu-footer-link .meizu-footer-info a:hover {
+    color: #008cff;
+}
+
+
+    </style>
+</head>
+<body>
+<div class="header">
+    <div class="wrap">
+        <div class="header-menu">
+            <ul>
+                <li class="logo">
+                    <a href="#">
+                        MEIZU
+                    </a>
+                </li>
+                <li>
+                    <a href="#">手机</a>
+                    <div class="nav-bar-list">
+                        <div class="wrap">
+                            <ul>
+                                <li>
+                                    <a href="#">
+                                        <div class="img-box">
+                                            <img src="img/手机1.jpg" alt="">
+                                        </div>
+                                        <p class="name">魅族 18X</p>
+                                        <p class="price">4499元起</p>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <div class="img-box">
+                                            <img src="img/手机1.jpg" alt="">
+                                        </div>
+                                        <p class="name">魅族 18X</p>
+                                        <p class="price">4499元起</p>
+                                    </a>
+                                </li>
+                                
+                                <li>
+                                    <a href="#">
+                                        <div class="img-box">
+                                            <img src="img/手机1.jpg" alt="">
+                                        </div>
+                                        <p class="name">魅族 18X</p>
+                                        <p class="price">4499元起</p>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <div class="img-box">
+                                            <img src="img/手机1.jpg" alt="">
+                                        </div>
+                                        <p class="name">魅族 18X</p>
+                                        <p class="price">4499元起</p>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <div class="img-box">
+                                            <img src="img/手机1.jpg" alt="">
+                                        </div>
+                                        <p class="name">魅族 18X</p>
+                                        <p class="price">4499元起</p>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <div class="img-box">
+                                            <img src="img/手机1.jpg" alt="">
+                                        </div>
+                                        <p class="name">魅族 18X</p>
+                                        <p class="price">4499元起</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <a href="#">Lipro</a>
+                    <div class="nav-bar-list">
+                        <div class="wrap">
+                            <ul>
+                                <li>
+                                    <a href="#">
+                                        <div class="img-box">
+                                            <img src="img/手机1.jpg" alt="">
+                                        </div>
+                                        <p class="name">魅族 18X</p>
+                                        <p class="price">4499元起</p>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <div class="img-box">
+                                            <img src="img/手机1.jpg" alt="">
+                                        </div>
+                                        <p class="name">魅族 18X</p>
+                                        <p class="price">4499元起</p>
+                                    </a>
+                                </li>
+                                
+                                <li>
+                                    <a href="#">
+                                        <div class="img-box">
+                                            <img src="img/手机1.jpg" alt="">
+                                        </div>
+                                        <p class="name">魅族 18X</p>
+                                        <p class="price">4499元起</p>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <div class="img-box">
+                                            <img src="img/手机1.jpg" alt="">
+                                        </div>
+                                        <p class="name">魅族 18X</p>
+                                        <p class="price">4499元起</p>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <div class="img-box">
+                                            <img src="img/手机1.jpg" alt="">
+                                        </div>
+                                        <p class="name">魅族 18X</p>
+                                        <p class="price">4499元起</p>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <div class="img-box">
+                                            <img src="img/手机1.jpg" alt="">
+                                        </div>
+                                        <p class="name">魅族 18X</p>
+                                        <p class="price">4499元起</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li><a href="#">声学</a></li>
+                <li><a href="#">配件</a></li>
+                <li><a href="#">PANDAER</a></li>
+                <li><a href="#">服务</a></li>
+                <li><a href="#">社区</a></li>
+                <li><a href="#">企业服务</a></li>
+                <li><a href="#">APP下载</a></li>
+                <li>
+                    <div class="search">
+                        <input type="text">
+                        <a href="#" class="iconfont">Q</a>
+                    </div>
+                </li>
+                <li class="user">
+                    <a href="#">
+                        <i><svg t="1638435781009" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2302" width="200" height="200"><path d="M947.924 963.76c0 21.752-17.62 39.372-39.354 39.372-21.75 0-39.37-17.62-39.37-39.371l-0.354-3.655c0-1.554 0.283-3.054 0.442-4.59-24.576-172.792-172.72-299.768-353.104-301.763-1.447 0.036-2.825 0.23-4.29 0.23-1.43 0-2.807-0.194-4.237-0.23C329.34 655.731 182.607 779.9 155.56 949.69c0.9 3.337 1.536 6.78 1.536 10.4l0.37 3.707c0 22.086-17.902 39.989-39.97 39.989s-39.99-17.903-39.99-39.99l-0.035-0.352h-0.76c0.107-1.165 0.336-2.278 0.46-3.425 0-3.302 0.53-6.427 1.27-9.499C98.94 791.217 205.684 662.422 350.968 606.95c-84.586-54.2-139.74-149.963-139.74-259.372 0-169.224 131.478-306.405 300.702-306.405 169.208 0 300.703 137.18 300.703 306.405 0 109.374-55.102 205.118-139.652 259.32 144.278 55.03 250.544 182.325 272.19 340.038 1.465 4.131 2.436 8.528 2.436 13.17l0.318 3.656z m-204.43-616.094c0-127.947-103.706-231.654-231.653-231.654S280.188 219.736 280.188 347.666c0 127.929 103.724 231.636 231.653 231.636s231.654-103.707 231.654-231.636z" fill="" p-id="2303"></path></svg></i>
+                    </a>
+                </li>
+                <li class="cart">
+                    <a href="#">
+                        <i><svg t="1638435931406" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="3131" width="200" height="200"><path d="M935.488 179.904c18.752 19.744 27.2 47.264 23.744 76.096l-50.336 268.448c-5.504 41.76-45.824 75.584-91.872 75.584L386.144 629.6c-0.832 0.224-1.792 0.224-2.496 0.224-16.576 0-30.656-11.968-31.84-27.616-1.216-16.512 12.032-30.624 29.44-31.936L814.4 540.48c15.872-0.128 29.216-11.744 31.04-25.024l50.336-268.416c1.184-10.048-1.792-21.056-8.128-27.776a20.8 20.8 0 0 0-15.392-6.464h-552.8c-17.664 0-32-13.376-32-29.76 0-16.416 14.464-29.792 32-29.792h552.928c24.448 0 46.752 9.44 63.104 26.656z m-73.28 509.504c14.528 0 32 15.232 32 31.872 0 16.384-14.208 32-32 32H343.68c-46.08 0-86.496-38.144-92.096-81.472L197.408 316.16l-30.784-166.272C164.704 135.296 150.496 128 136.64 128H95.968C78.304 128 64 110.176 64 93.76 64 77.44 78.432 64 96 64h40.64c46.528 0 87.52 29.76 94.08 85.888l29.76 166.272 54.336 347.776c1.792 13.856 15.264 25.472 28.736 25.472H862.24zM320 896s0 35.36 0 0a64 64 0 1 1 128 0 64 64 0 0 1-128 0z m384 0s0 35.36 0 0a64 64 0 1 1 128 0 64 64 0 0 1-128 0z" p-id="3132"></path></svg></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="turnPhoto" id="wrap">
+    <div class="img-list">
+        <img src="img/轮播图1.jpg">
+        <img src="img/轮播图2.jpg">
+        <img src="img/轮播图3.jpg">
+        <img src="img/轮播图4.jpg">
+        <img src="img/轮播图5.jpg">
+        <img src="img/轮播图6.jpg">
+        <img src="img/轮播图7.jpg">
+        <img src="img/轮播图8.jpg">
+        <img src="img/轮播图9.jpg">
+    </div>
+
+    <!-- 左右箭头 -->
+    <div class="arrow">
+        <a href="javascript:;" class="left"><</a>
+        <a href="javascript:;" class="right">></a>
+    </div>
+
+    <!-- 小圆点 -->
+    <ul class="circle-list">
+        <li class="circle active" data-n="0"></li>
+        <li class="circle" data-n="1"></li>
+        <li class="circle" data-n="2"></li>
+        <li class="circle" data-n="3"></li>
+        <li class="circle" data-n="4"></li>
+        <li class="circle" data-n="5"></li>
+        <li class="circle" data-n="6"></li>
+        <li class="circle" data-n="7"></li>
+        <li class="circle" data-n="8"></li>
+
+        
+    </ul>
+</div>
+
+<div class="container">
+    <div class="adv-center">
+        <div class="section-box">
+            <div class="section-box-adv">
+                <ul class="four-ad">
+                    <li class="adv-box1">
+                        <a href="#" class="box-img">
+                            <img src="img//广告图1.jpg" alt="">
+                            <em>魅族 12.12</em>
+                            <p>年终购好物</p>
+                        </a>
+                    </li>
+                    <li class="adv-box2">
+                        <a href="#" class="box-img">
+                            <img src="img//广告图2.jpg" alt="">
+                            <em>POP2s 真无线耳机</em>
+                            <p>限时特惠159元</p>
+                        </a>
+                    </li>
+                    <li class="adv-box3">
+                        <a href="#" class="box-img">
+                            <img src="img//广告图3.png" alt="">
+                            <em>渴望众筹</em>
+                            <p>现已开启</p>
+                        </a>
+                    </li>
+                    <li class="adv-box4">
+                        <a href="#" class="box-img">
+                            <img src="img//广告图5.jpg" alt="">
+                            <em>mCycle</em>
+                            <p>以旧换新</p>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>   
+
+    
+    <div>
+        <div class="section-box section-phone-box">
+            <div class="section-title">
+                <h3>手机</h3>
+            </div>
+            <div class="section-box-adv">
+                <a href="#" class="box-adv-ad">
+                    <img src="img//手机横图1.jpg" alt="">
+                </a>
+            </div>
+            <div class="section-box-row">
+                <div class="wrapper">
+                    <ul class="clearfix">
+                        <li class="big big1">
+                            <div class="section-item-box goods-box">
+                                <a href="#" class="box-img box-img-retina">
+                                    <img src="img//手机2.png" alt="" class="goods-img lazy-img loaded-img"">
+                                    <span class="box-info">
+                                        <span class="goods-name">魅族 18s</span>
+                                        <span class="goods-desc">限时领券立省200 | 12期免息</span>
+                                        <span class="goods-price">
+                                            <i>￥</i>
+                                            3699
+                                            <em>起</em>
+                                            <s></s>
+                                        </span>
+                                    </span>
+                                    <span class="product-sign red">热卖</span>
+                                    
+                                </a>
+                            </div>
+                        </li>
+                        <li class="big big2">
+                            <div class="section-item-box goods-box">
+                                <a class="box-img box-img-retina" >
+                                    <img class="goods-img lazy-img  loaded-img" src="img//手机3.png">
+                                    <span class="box-info">
+                                        <span class="goods-name">魅族 18 Pro</span>
+                                        <span class="goods-desc">限时领券立省1300 | 12期免息</span>
+                                        <span class="goods-price">
+                                            <i>￥</i>4999<em>起</em>
+                                            <s></s>
+                                        </span>
+                                    </span>
+                                    <span class="product-sign red">免息</span>
+                                </a>
+                            </div>
+                        </li>
+                        <li class="phone3">
+                            <div class="section-item-box goods-box">
+                                <a href="#" class="box-img box-img-retina">
+                                    <img src="img/手机4.png" class="goods-img lazy-img loaded-img">
+                                    <span class="box-info">
+                                        <span class="goods-name">魅族 18</span>
+                                        <span class="goods-desc">限时领券至高立省1000 | 12期免息</span>
+                                        <span class="goods-price">
+                                            <i>￥</i>3999<em>起</em><s></s>
+                                        </span>
+                                    </span>
+                                   
+                                    <span class="product-sign red">免息</span>
+                                </a>
+                            </div>
+                        </li>
+                        <li class="phone4">
+                            <div class="section-item-box goods-box">
+                                <a href="#" class="box-img box-img-retina">
+                                    <img src="img/手机4.png" class="goods-img lazy-img loaded-img">
+                                    <span class="box-info">
+                                        <span class="goods-name">魅族 18</span>
+                                        <span class="goods-desc">限时领券至高立省1000 | 12期免息</span>
+                                        <span class="goods-price">
+                                            <i>￥</i>3999<em>起</em><s></s>
+                                        </span>
+                                    </span>
+                                   
+                                    <span class="product-sign red">免息</span>
+                                </a>
+                            </div>
+                        </li>
+                        <li class="phone5">
+                            <div class="section-item-box goods-box">
+                                <a href="#" class="box-img box-img-retina">
+                                    <img src="img/手机4.png" class="goods-img lazy-img loaded-img">
+                                    <span class="box-info">
+                                        <span class="goods-name">魅族 18</span>
+                                        <span class="goods-desc">限时领券至高立省1000 | 12期免息</span>
+                                        <span class="goods-price">
+                                            <i>￥</i>3999<em>起</em><s></s>
+                                        </span>
+                                    </span>
+                                   
+                                    <span class="product-sign red">免息</span>
+                                </a>
+                            </div>
+                        </li>
+                        <li class="phone6">
+                            <div class="section-item-box goods-box">
+                                <a href="#" class="box-img box-img-retina">
+                                    <img src="img/手机4.png" class="goods-img lazy-img loaded-img">
+                                    <span class="box-info">
+                                        <span class="goods-name">魅族 18</span>
+                                        <span class="goods-desc">限时领券至高立省1000 | 12期免息</span>
+                                        <span class="goods-price">
+                                            <i>￥</i>3999<em>起</em><s></s>
+                                        </span>
+                                    </span>
+                                   
+                                    <span class="product-sign red">免息</span>
+                                </a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <div class="section-box section-phone-box">
+            
+            <div class="section-box-row">
+                <div class="wrapper">
+                    <ul class="clearfix">
+                        <li class="big big1">
+                            <div class="section-item-box goods-box">
+                                <a href="#" class="box-img box-img-retina">
+                                    <img src="img//手机2.png" alt="" class="goods-img lazy-img loaded-img"">
+                                    <span class="box-info">
+                                        <span class="goods-name">魅族 18s</span>
+                                        <span class="goods-desc">限时领券立省200 | 12期免息</span>
+                                        <span class="goods-price">
+                                            <i>￥</i>
+                                            3699
+                                            <em>起</em>
+                                            <s></s>
+                                        </span>
+                                    </span>
+                                    <span class="product-sign red">热卖</span>
+                                    
+                                </a>
+                            </div>
+                        </li>
+                        <li class="big big2">
+                            <div class="section-item-box goods-box">
+                                <a class="box-img box-img-retina" >
+                                    <img class="goods-img lazy-img  loaded-img" src="img//手机3.png">
+                                    <span class="box-info">
+                                        <span class="goods-name">魅族 18 Pro</span>
+                                        <span class="goods-desc">限时领券立省1300 | 12期免息</span>
+                                        <span class="goods-price">
+                                            <i>￥</i>4999<em>起</em>
+                                            <s></s>
+                                        </span>
+                                    </span>
+                                    <span class="product-sign red">免息</span>
+                                </a>
+                            </div>
+                        </li>
+                        <li class="phone3">
+                            <div class="section-item-box goods-box">
+                                <a href="#" class="box-img box-img-retina">
+                                    <img src="img/手机4.png" class="goods-img lazy-img loaded-img">
+                                    <span class="box-info">
+                                        <span class="goods-name">魅族 18</span>
+                                        <span class="goods-desc">限时领券至高立省1000 | 12期免息</span>
+                                        <span class="goods-price">
+                                            <i>￥</i>3999<em>起</em><s></s>
+                                        </span>
+                                    </span>
+                                   
+                                    <span class="product-sign red">免息</span>
+                                </a>
+                            </div>
+                        </li>
+                        <li class="phone4">
+                            <div class="section-item-box goods-box">
+                                <a href="#" class="box-img box-img-retina">
+                                    <img src="img/手机4.png" class="goods-img lazy-img loaded-img">
+                                    <span class="box-info">
+                                        <span class="goods-name">魅族 18</span>
+                                        <span class="goods-desc">限时领券至高立省1000 | 12期免息</span>
+                                        <span class="goods-price">
+                                            <i>￥</i>3999<em>起</em><s></s>
+                                        </span>
+                                    </span>
+                                   
+                                    <span class="product-sign red">免息</span>
+                                </a>
+                            </div>
+                        </li>
+                        <li class="phone5">
+                            <div class="section-item-box goods-box">
+                                <a href="#" class="box-img box-img-retina">
+                                    <img src="img/手机4.png" class="goods-img lazy-img loaded-img">
+                                    <span class="box-info">
+                                        <span class="goods-name">魅族 18</span>
+                                        <span class="goods-desc">限时领券至高立省1000 | 12期免息</span>
+                                        <span class="goods-price">
+                                            <i>￥</i>3999<em>起</em><s></s>
+                                        </span>
+                                    </span>
+                                   
+                                    <span class="product-sign red">免息</span>
+                                </a>
+                            </div>
+                        </li>
+                        <li class="phone6">
+                            <div class="section-item-box goods-box">
+                                <a href="#" class="box-img box-img-retina">
+                                    <img src="img/手机4.png" class="goods-img lazy-img loaded-img">
+                                    <span class="box-info">
+                                        <span class="goods-name">魅族 18</span>
+                                        <span class="goods-desc">限时领券至高立省1000 | 12期免息</span>
+                                        <span class="goods-price">
+                                            <i>￥</i>3999<em>起</em><s></s>
+                                        </span>
+                                    </span>
+                                   
+                                    <span class="product-sign red">免息</span>
+                                </a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="meizu-footer" id="meizu-footer">
+    <div class="meizu-footer-link">
+        <div class="meizu-footer-wrap">
+            <div class="meizu-row clearfix">
+                <ul class="meizu-footer-service" id="meizu-footer-service">
+                    <li>
+                        <a href="#">
+                            <img src="img/底部服务图1.png">
+                            <span>满80免运费</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="img/底部服务图2.png">
+                            <span>满80免运费</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="img/底部服务图3.png">
+                            <span>满80免运费</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="img/底部服务图4.png">
+                            <span>满80免运费</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="img/底部服务图5.png">
+                            <span>满80免运费</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="img/底部服务图6.png">
+                            <span>满80免运费</span>
+                        </a>
+                    </li>
+                </ul>
+                <div class="onlive-server meizu-footer-hotline">
+                    <span>周一至周日 8:00-20:00</span>
+                    <p class="tel">400-788-3333</p>
+                    <a href="#" class="onlive-btn">在线客服</a>
+                </div>
+            </div>
+            <hr class="footer-hr">
+            <div class="meizu-footer-co">
+               <div class="meizu-row">
+                    <div class="meizu-footer-info">                       
+                            <ul class="clearfix">
+                                <li><a href="#">了解魅族</a></li>
+                                <li><a href="#">加入我们</a></li>
+                                <li><a href="#">联系我们</a></li>
+                                <li><a href="#">天猫旗舰店</a></li>
+                                <li><a href="#">线下专卖店</a></li>
+                                <li><a href="#">线上销售授权名单</a></li>
+                                <li><a href="#">问题反馈</a></li>
+                                <li><a href="#">出版物经营许可证</a></li>
+                                <li style="border: none;"><a href="#">互联网违法和不良信息举报(12377)</a></li>
+                                
+                            </ul>
+                    </div>
+               </div>
+            </div>
+           
+        </div>
+
+    </div>
+</div>
+
+<script>
+
+    let oLeft = document.querySelector(".left");
+    let oRight = document.querySelector(".right");
+    let oImgList = document.querySelector(".img-list");
+
+    let index = 0;
+
+    let lock = true;
+
+    function handleRightBtn() {
+      if (!lock) return;
+      index++;
+      oImgList.style.left = index * - 1903 + "px";
+
+      oImgList.style.transition = "0.5s ease";
+
+      if (index === 9) {
+        index = 0;
+        oImgList.style.left = 0;
+      }
+
+      // 点亮小圆点
+      setCircles();
+      // 关锁
+      lock = false;
+      setTimeout(() => {
+        lock = true;
+      }, 1000);
+    }
+
+    //右按钮
+    oRight.addEventListener("click", handleRightBtn);
+
+    //左按钮
+    oLeft.addEventListener("click", () => {
+      if (!lock) return;
+      index--;
+
+      if (index === -1) {
+        oImgList.style.left = 8 * -1903 + "px";
+        index = 8;
+        setTimeout(() => {
+          oImgList.style.left = index * -1903 + "px";
+          oImgList.style.transition = "0.5s ease";
+        }, 2000);
+      } else {
+        oImgList.style.left = index * -1903 + "px";
+      }
+
+      // 设置小圆点的高亮
+      setCircles();
+
+      lock = false;
+      setTimeout(() => {
+        lock = true;
+      }, 500);
+    },1000);
+
+    // 获取小圆点
+    const circles = document.querySelectorAll(".circle");
+
+    // 小圆点高亮的显示
+    function setCircles() {
+      for (let i = 0; i < circles.length; i++) {
+        if (i === index) {
+          circles[i].classList.add("active");
+        } else {
+          circles[i].classList.remove("active");
+        }
+      }
+    }
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             
+    const oCircle = document.querySelector(".circle-list");
+    oCircle.addEventListener("click", (e) => {
+      // 当我点击小圆点的时候
+      if (e.target.nodeName.toLowerCase() === "li") {
+        // 当前元素的data-n对应得值 和index一一对应
+        const n = Number(e.target.getAttribute("data-n"));
+        index = n;
+        setCircles();
+        oImgList.style.transition = "0.5s ease";
+        oImgList.style.left = index * - 1903 + "px";
+      }
+    });
+
+    // 自动轮播
+    let autoplay = setInterval(handleRightBtn, 2000);
+    const oWrap = document.getElementById("wrap");
+    // 移入鼠标停止轮播
+    oWrap.addEventListener("mouseenter", () => {
+      clearInterval(autoplay);
+    });
+    // 移出鼠标继续轮播
+    oWrap.addEventListener("mouseleave", () => {
+      // 设表先关
+      clearInterval(autoplay);
+      autoplay = setInterval(handleRightBtn, 2000);
+    });
+  </script>
+</body>
+</html>
+
+
